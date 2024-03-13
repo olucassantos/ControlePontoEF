@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "ConexaoPadrao":  "server=localhost;port=3306;database=controleponto;user=root;password=12345"
+  }
+}
