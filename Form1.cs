@@ -1,3 +1,5 @@
+using ControlePonto.Data;
+
 namespace ControlePonto
 {
     public partial class Form1 : Form
@@ -5,6 +7,8 @@ namespace ControlePonto
         public Form1()
         {
             InitializeComponent();
+
+            ControlePontoDbContext contexto = new ControlePontoDbContext();
         }
     }
 }

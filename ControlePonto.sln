@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlePonto", "ControlePonto.csproj", "{D91F3C60-6B55-46D2-B2C0-B5451A055178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlePonto", "ControlePonto.csproj", "{796363D4-B54E-485F-8BDB-9D95D3F296F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D91F3C60-6B55-46D2-B2C0-B5451A055178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D91F3C60-6B55-46D2-B2C0-B5451A055178}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D91F3C60-6B55-46D2-B2C0-B5451A055178}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D91F3C60-6B55-46D2-B2C0-B5451A055178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796363D4-B54E-485F-8BDB-9D95D3F296F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796363D4-B54E-485F-8BDB-9D95D3F296F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796363D4-B54E-485F-8BDB-9D95D3F296F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796363D4-B54E-485F-8BDB-9D95D3F296F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9BD335E5-714B-4BCB-87B6-CCF514156C8A}
+		SolutionGuid = {8F94FB3A-4D62-477E-8B32-5C175B7F6E40}
 	EndGlobalSection
 EndGlobal

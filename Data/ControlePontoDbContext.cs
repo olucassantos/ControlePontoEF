@@ -9,18 +9,18 @@ namespace ControlePonto.Data
 {
     internal class ControlePontoDbContext : DbContext
     {
-        public ControlePontoDbContext(DbContextOptions<ControlePontoDbContext> options) : base(options)
+        public ControlePontoDbContext() : base()
         {
 
         }
 
         public DbSet<Cargo> Cargos { get; set; }
 
-        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Importa o nosso arquivo de configuração JSON
             var builder = new ConfigurationBuilder()
+                            .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appconfig.json", false, true);
             
             // Compila as configurações
