@@ -12,5 +12,7 @@ namespace ControlePonto.Modelos
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal CargaHoraria { get; set; }
+
+        public List<Funcionario> Funcionarios { get; set; }
     }
 }
