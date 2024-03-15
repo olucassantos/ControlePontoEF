@@ -23,12 +23,22 @@ namespace ControlePonto.Formularios.Cargos
             // Diretiva para liberar recursos após o uso
             using(var contexto = new ControlePontoDbContext())
             {
+                // Adicionar o cargo dentro do contexto
                 contexto.Cargos.Add(cargo);
-                contexto.SaveChanges();
-            }
 
-            MessageBox.Show("Cargo inserido com sucesso!");
-            this.Close();
+                // Salvar as alterações
+                int resultado = contexto.SaveChanges();
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Cargo inserido com sucesso!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Houve um problema ao salvar o cargo!");
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

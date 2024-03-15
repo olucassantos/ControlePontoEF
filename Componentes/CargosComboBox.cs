@@ -27,20 +27,23 @@ namespace ControlePonto.Componentes
 
         private void CarregaCargos()
         {
-            // Faz a conexão com o contexto
-            using (var contexto = new ControlePontoDbContext())
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
             {
-                // Pega os cargos do banco
-                var cargos = contexto.Cargos.ToList();
+                // Faz a conexão com o contexto
+                using (var contexto = new ControlePontoDbContext())
+                {
+                    // Pega os cargos do banco
+                    var cargos = contexto.Cargos.ToList();
 
-                // Adiciona os cargos como fonte de dados do combobox
-                this.DataSource = cargos;
+                    // Adiciona os cargos como fonte de dados do combobox
+                    this.DataSource = cargos;
 
-                // Adiciona o ID como valor combobox
-                this.ValueMember = "Id";
-                // Adiciona o nome para ser exibido no combobox
-                this.DisplayMember = "Nome";
-            };
+                    // Adiciona o ID como valor combobox
+                    this.ValueMember = "Id";
+                    // Adiciona o nome para ser exibido no combobox
+                    this.DisplayMember = "Nome";
+                };
+            }
         }
     }
 }

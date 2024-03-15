@@ -30,19 +30,18 @@ namespace ControlePonto.Formularios.Funcionarios
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             txtNome = new TextBox();
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            dateTimePicker1 = new DateTimePicker();
+            txtCPF = new MaskedTextBox();
+            dateDataNascimento = new DateTimePicker();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtMatricula = new TextBox();
             label5 = new Label();
             btnCancelar = new Button();
             btnSalvar = new Button();
-            cargosComboBox1 = new CargosComboBox(components);
+            cmbCargos = new ComboBox();
             SuspendLayout();
             // 
             // txtNome
@@ -79,21 +78,22 @@ namespace ControlePonto.Formularios.Funcionarios
             label3.TabIndex = 7;
             label3.Text = "CPF";
             // 
-            // maskedTextBox1
+            // txtCPF
             // 
-            maskedTextBox1.Location = new Point(385, 171);
-            maskedTextBox1.Mask = "000.000.000-000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(389, 31);
-            maskedTextBox1.TabIndex = 8;
+            txtCPF.Location = new Point(385, 171);
+            txtCPF.Mask = "999.999.999-99";
+            txtCPF.Name = "txtCPF";
+            txtCPF.Size = new Size(389, 31);
+            txtCPF.TabIndex = 8;
+            txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
-            // dateTimePicker1
+            // dateDataNascimento
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(12, 171);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(367, 31);
-            dateTimePicker1.TabIndex = 9;
+            dateDataNascimento.Format = DateTimePickerFormat.Short;
+            dateDataNascimento.Location = new Point(12, 171);
+            dateDataNascimento.Name = "dateDataNascimento";
+            dateDataNascimento.Size = new Size(367, 31);
+            dateDataNascimento.TabIndex = 9;
             // 
             // label4
             // 
@@ -104,12 +104,12 @@ namespace ControlePonto.Formularios.Funcionarios
             label4.TabIndex = 11;
             label4.Text = "Cargo";
             // 
-            // textBox2
+            // txtMatricula
             // 
-            textBox2.Location = new Point(12, 250);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(367, 31);
-            textBox2.TabIndex = 10;
+            txtMatricula.Location = new Point(12, 250);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.Size = new Size(367, 31);
+            txtMatricula.TabIndex = 10;
             // 
             // label5
             // 
@@ -139,27 +139,27 @@ namespace ControlePonto.Formularios.Funcionarios
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
-            // cargosComboBox1
+            // cmbCargos
             // 
-            cargosComboBox1.FormattingEnabled = true;
-            cargosComboBox1.Location = new Point(385, 250);
-            cargosComboBox1.Name = "cargosComboBox1";
-            cargosComboBox1.Size = new Size(389, 33);
-            cargosComboBox1.TabIndex = 15;
+            cmbCargos.FormattingEnabled = true;
+            cmbCargos.Location = new Point(385, 250);
+            cmbCargos.Name = "cmbCargos";
+            cmbCargos.Size = new Size(389, 33);
+            cmbCargos.TabIndex = 15;
             // 
             // FormularioFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(786, 378);
-            Controls.Add(cargosComboBox1);
+            Controls.Add(cmbCargos);
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txtMatricula);
             Controls.Add(label4);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(dateDataNascimento);
+            Controls.Add(txtCPF);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
@@ -176,13 +176,13 @@ namespace ControlePonto.Formularios.Funcionarios
         private Label label2;
         private Label label1;
         private Label label3;
-        private MaskedTextBox maskedTextBox1;
-        private DateTimePicker dateTimePicker1;
+        private MaskedTextBox txtCPF;
+        private DateTimePicker dateDataNascimento;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtMatricula;
         private Label label5;
         private Button btnCancelar;
         private Button btnSalvar;
-        private CargosComboBox cargosComboBox1;
+        private ComboBox cmbCargos;
     }
 }
