@@ -33,6 +33,7 @@
             adicionarToolStripMenuItem = new ToolStripMenuItem();
             funcionariosToolStripMenuItem = new ToolStripMenuItem();
             adicionarToolStripMenuItem1 = new ToolStripMenuItem();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,15 +71,25 @@
             // adicionarToolStripMenuItem1
             // 
             adicionarToolStripMenuItem1.Name = "adicionarToolStripMenuItem1";
-            adicionarToolStripMenuItem1.Size = new Size(270, 34);
+            adicionarToolStripMenuItem1.Size = new Size(189, 34);
             adicionarToolStripMenuItem1.Text = "Adicionar";
             adicionarToolStripMenuItem1.Click += adicionarToolStripMenuItem1_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(165, 225);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // MenuForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(849, 547);
+            Controls.Add(button1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "MenuForm";
@@ -97,5 +108,6 @@
         private ToolStripMenuItem adicionarToolStripMenuItem;
         private ToolStripMenuItem funcionariosToolStripMenuItem;
         private ToolStripMenuItem adicionarToolStripMenuItem1;
+        private Button button1;
     }
 }
