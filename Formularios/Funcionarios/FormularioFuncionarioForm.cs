@@ -62,6 +62,7 @@ namespace ControlePonto.Formularios.Funcionarios
             {
                 // Procura no banco de dados o cargo com o cargoID
                 var cargo = contexto.Cargos.Find(cargoId);
+                // Associa o cargo ao funcionário
                 funcionario.Cargo = cargo;
 
                 // Adiciona o usuário no contexto do banco
