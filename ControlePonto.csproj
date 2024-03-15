@@ -24,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="appconfig.json" />
+    <Resource Include="appconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
