@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControlePonto.Formularios.Apontamentos;
 
 namespace ControlePonto.Formularios
 {
@@ -30,6 +31,12 @@ namespace ControlePonto.Formularios
         {
             FormularioFuncionarioForm formularioFuncionarioForm = new FormularioFuncionarioForm();
             formularioFuncionarioForm.ShowDialog();
+        }
+
+        private void btnAbrirApontamento_Click(object sender, EventArgs e)
+        {
+            FormularioApontamentosForm formularioApontamentosForm = new FormularioApontamentosForm();
+            formularioApontamentosForm.Show();
         }
     }
 }
