@@ -23,11 +23,22 @@ namespace ControlePonto.Modelos
             if (this.Foto == null)
                 return null;
 
-            MemoryStream mStream = new MemoryStream();
-            byte[] pData = this.Foto;
-            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-            Bitmap bm = new Bitmap(mStream, false);
-            mStream.Dispose();
+            // Abre um fluxo de dados na memória
+            MemoryStream fluxoDeMemoria = new MemoryStream();
+
+            // Pega a foto do funcionário
+            byte[] dadosBlob = this.Foto;
+
+            // Manda a foto para a memória do computador
+            fluxoDeMemoria.Write(dadosBlob, 0, Convert.ToInt32(dadosBlob.Length));
+
+            // Converte os dados para bitmap
+            Bitmap bm = new Bitmap(fluxoDeMemoria, false);
+
+            // Limpa o fluxo de memoria
+            fluxoDeMemoria.Dispose();
+
+            // Retorna a imagem
             return bm;
         }
     }
