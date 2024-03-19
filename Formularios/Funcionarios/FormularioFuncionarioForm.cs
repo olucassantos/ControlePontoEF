@@ -16,6 +16,8 @@ namespace ControlePonto.Formularios.Funcionarios
 {
     public partial class FormularioFuncionarioForm : Form
     {
+        byte[] fotoUsuario;
+
         public FormularioFuncionarioForm()
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace ControlePonto.Formularios.Funcionarios
                 CPF = txtCPF.Text,
                 Matricula = txtMatricula.Text,
                 DataNascimento = dateDataNascimento.Value,
-                Foto = ""
+                Foto = fotoUsuario
             };
 
             // Criou uma instancia do contexto do banco
@@ -81,6 +83,42 @@ namespace ControlePonto.Formularios.Funcionarios
                     MessageBox.Show("Houve um problema ao salvar o funcionário!");
                 }
             }
+        }
+
+        private void btnAdicionarFoto_Click(object sender, EventArgs e)
+        {
+            // Cria uma caixa de seleção de arquivos
+            using (OpenFileDialog caixaDialogoArquivo = new OpenFileDialog())
+            {
+                // Define os tipos permitidos
+                caixaDialogoArquivo.Filter = "Imagens|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+                // Abre a caixa de dialogo e aguarda o OK
+                if (caixaDialogoArquivo.ShowDialog() == DialogResult.OK)
+                {
+                    // Cria um fluxo de leitura de arquivos
+                    using (var fluxo = new FileStream(caixaDialogoArquivo.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        // Faz a leitura do fluxo de arquivos como binários
+                        using (var leitor = new BinaryReader(fluxo))
+                        {
+                            // Aramazena na variavel de foto do usuário
+                            fotoUsuario = leitor.ReadBytes((int)fluxo.Length);
+
+                            pctFotoFuncionario.Image = ByteToImage(fotoUsuario);
+                        }
+                    }
+                }
+            }
+        }
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
         }
     }
 }

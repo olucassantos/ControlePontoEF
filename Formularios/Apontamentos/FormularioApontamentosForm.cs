@@ -117,6 +117,7 @@ namespace ControlePonto.Formularios.Apontamentos
                 // Adiciona Nome
                 lblNomeFuncionario.Text = funcionario.Nome;
                 FuncionarioSelecionado = funcionario;
+                pctImagemFuncionario.Image = funcionario.FotoBitmap();
             }
         }
 
@@ -161,6 +162,7 @@ namespace ControlePonto.Formularios.Apontamentos
                     txtMatricula.Clear();
                     FuncionarioSelecionado = null;
                     lblNomeFuncionario.Text = "";
+                    pctImagemFuncionario.Image = null;
                 }
             }
         }

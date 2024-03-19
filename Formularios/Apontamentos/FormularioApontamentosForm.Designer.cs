@@ -34,7 +34,7 @@
             btnCancela = new Button();
             btnAprova = new Button();
             lblNomeFuncionario = new Label();
-            imageFunc = new PictureBox();
+            pctImagemFuncionario = new PictureBox();
             panel3 = new Panel();
             dateTimePicker1 = new DateTimePicker();
             panel2 = new Panel();
@@ -54,7 +54,7 @@
             timer = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)imageFunc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctImagemFuncionario).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -83,7 +83,7 @@
             panel1.Controls.Add(btnCancela);
             panel1.Controls.Add(btnAprova);
             panel1.Controls.Add(lblNomeFuncionario);
-            panel1.Controls.Add(imageFunc);
+            panel1.Controls.Add(pctImagemFuncionario);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(339, 156);
             panel1.Name = "panel1";
@@ -120,13 +120,14 @@
             lblNomeFuncionario.Text = "Nome Funcionario";
             lblNomeFuncionario.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // imageFunc
+            // pctImagemFuncionario
             // 
-            imageFunc.Location = new Point(118, 3);
-            imageFunc.Name = "imageFunc";
-            imageFunc.Size = new Size(223, 238);
-            imageFunc.TabIndex = 0;
-            imageFunc.TabStop = false;
+            pctImagemFuncionario.Location = new Point(118, 3);
+            pctImagemFuncionario.Name = "pctImagemFuncionario";
+            pctImagemFuncionario.Size = new Size(223, 238);
+            pctImagemFuncionario.SizeMode = PictureBoxSizeMode.Zoom;
+            pctImagemFuncionario.TabIndex = 0;
+            pctImagemFuncionario.TabStop = false;
             // 
             // panel3
             // 
@@ -330,7 +331,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)imageFunc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctImagemFuncionario).EndInit();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -357,7 +358,7 @@
         private Button btnCancela;
         private Button btnAprova;
         private Label lblNomeFuncionario;
-        private PictureBox imageFunc;
+        private PictureBox pctImagemFuncionario;
         private Panel panel2;
         private TextBox txtMatricula;
         private DateTimePicker dateTimePicker1;

@@ -42,13 +42,16 @@ namespace ControlePonto.Formularios.Funcionarios
             btnCancelar = new Button();
             btnSalvar = new Button();
             cmbCargos = new ComboBox();
+            btnAdicionarFoto = new Button();
+            pctFotoFuncionario = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pctFotoFuncionario).BeginInit();
             SuspendLayout();
             // 
             // txtNome
             // 
             txtNome.Location = new Point(12, 98);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(762, 31);
+            txtNome.Size = new Size(616, 31);
             txtNome.TabIndex = 2;
             // 
             // label2
@@ -83,7 +86,7 @@ namespace ControlePonto.Formularios.Funcionarios
             txtCPF.Location = new Point(385, 171);
             txtCPF.Mask = "999.999.999-99";
             txtCPF.Name = "txtCPF";
-            txtCPF.Size = new Size(389, 31);
+            txtCPF.Size = new Size(243, 31);
             txtCPF.TabIndex = 8;
             txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -144,14 +147,35 @@ namespace ControlePonto.Formularios.Funcionarios
             cmbCargos.FormattingEnabled = true;
             cmbCargos.Location = new Point(385, 250);
             cmbCargos.Name = "cmbCargos";
-            cmbCargos.Size = new Size(389, 33);
+            cmbCargos.Size = new Size(243, 33);
             cmbCargos.TabIndex = 15;
+            // 
+            // btnAdicionarFoto
+            // 
+            btnAdicionarFoto.Location = new Point(634, 253);
+            btnAdicionarFoto.Name = "btnAdicionarFoto";
+            btnAdicionarFoto.Size = new Size(140, 30);
+            btnAdicionarFoto.TabIndex = 16;
+            btnAdicionarFoto.Text = "Adicionar Foto";
+            btnAdicionarFoto.UseVisualStyleBackColor = true;
+            btnAdicionarFoto.Click += btnAdicionarFoto_Click;
+            // 
+            // pctFotoFuncionario
+            // 
+            pctFotoFuncionario.Location = new Point(634, 98);
+            pctFotoFuncionario.Name = "pctFotoFuncionario";
+            pctFotoFuncionario.Size = new Size(140, 149);
+            pctFotoFuncionario.SizeMode = PictureBoxSizeMode.Zoom;
+            pctFotoFuncionario.TabIndex = 17;
+            pctFotoFuncionario.TabStop = false;
             // 
             // FormularioFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(786, 378);
+            Controls.Add(pctFotoFuncionario);
+            Controls.Add(btnAdicionarFoto);
             Controls.Add(cmbCargos);
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
@@ -166,6 +190,7 @@ namespace ControlePonto.Formularios.Funcionarios
             Controls.Add(txtNome);
             Name = "FormularioFuncionarioForm";
             Text = "Cadastro Funcionário";
+            ((System.ComponentModel.ISupportInitialize)pctFotoFuncionario).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,5 +209,7 @@ namespace ControlePonto.Formularios.Funcionarios
         private Button btnCancelar;
         private Button btnSalvar;
         private ComboBox cmbCargos;
+        private Button btnAdicionarFoto;
+        private PictureBox pctFotoFuncionario;
     }
 }
