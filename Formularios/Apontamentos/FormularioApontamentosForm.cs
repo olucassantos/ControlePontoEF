@@ -129,15 +129,28 @@ namespace ControlePonto.Formularios.Apontamentos
 
             using (var contexto = new ControlePontoDbContext())
             {
+                // Pesquisa os apontamentos do funcionário no dia de hoje
+                int quantidadeApontamentos = contexto.Apontamentos
+                    .Count( 
+                        apontamento => 
+                            apontamento.FuncionarioId == FuncionarioSelecionado.Id &&
+                            apontamento.Data.Date == DateTime.Today
+                    );
+
+                // Define se é entrada ou saida pelo quantidade
+                string tipo = quantidadeApontamentos % 2 == 0 ? "Entrada" : "Saida";
+
+                // Cria o apontamento
                 var apontamento = new Apontamento
                 {
-                    Data = DateTime.Now,
+                    Data = DateTime.Today,
                     Hora = DateTime.Now,
-                    Tipo = "",
+                    Tipo = tipo,
                     Motivo = "",
                     FuncionarioId = FuncionarioSelecionado.Id
                 };
 
+                // Salva no contexto
                 contexto.Apontamentos.Add(apontamento);
                 int resultado = contexto.SaveChanges();
 
@@ -147,6 +160,7 @@ namespace ControlePonto.Formularios.Apontamentos
                     MessageBox.Show("Ponto registrado com sucesso!");
                     txtMatricula.Clear();
                     FuncionarioSelecionado = null;
+                    lblNomeFuncionario.Text = "";
                 }
             }
         }
